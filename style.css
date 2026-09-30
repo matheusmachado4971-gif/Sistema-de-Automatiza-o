@@ -1,0 +1,302 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.barra-superior {
+  background: #005596;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 18px;
+  font-size: 13px;
+  flex-wrap: wrap;
+}
+
+.logo strong,
+.produto strong {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.produto strong {
+  color: #ffd54a;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tag {
+  border: 1px solid #ffffff;
+  padding: 3px 8px;
+  font-size: 11px;
+  border-radius: 2px;
+  opacity: 0.25;
+}
+
+.tag.operacao { color: #4caf50; }
+.tag.peak     { color: #f44336; }
+.tag.sensor   { color: #ffeb3b; }
+.tag.falha    { color: #f44336; }
+
+.tag.ligada {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.relogio {
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+}
+
+.piscar {
+  animation: pisca 0.6s steps(1, end) infinite;
+}
+
+@keyframes pisca {
+  0%   { opacity: 1; }
+  50%  { opacity: 0.15; }
+  100% { opacity: 1; }
+}
+
+.area {
+  flex: 1;
+  display: flex;
+  gap: 14px;
+  padding: 14px;
+  align-items: stretch;
+}
+
+.barra-lateral {
+  width: 230px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  padding: 12px;
+}
+
+.barra-lateral h2 {
+  font-size: 12px;
+  color: #475569;
+  border-bottom: 2px solid #005596;
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+}
+
+.barra-lateral ul {
+  list-style: none;
+  font-size: 12px;
+  color: #475569;
+}
+
+.barra-lateral li {
+  padding: 8px 0;
+  border-bottom: 1px dashed #e2e8f0;
+}
+
+.barra-lateral span {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.painel-central {
+  flex: 1;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.painel-central h2 {
+  font-size: 12px;
+  color: #475569;
+  border-bottom: 2px solid #005596;
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+}
+
+.modulos {
+  flex: 1;
+  display: flex;
+  gap: 12px;
+}
+
+.modulo {
+  flex: 1;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  outline: none;
+}
+
+.modulo:focus {
+  border-color: #005596;
+  box-shadow: 0 0 0 2px rgba(0, 85, 150, 0.25);
+}
+
+.modulo h3 {
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 1px;
+  background: #005596;
+  color: #ffffff;
+  padding: 6px;
+}
+
+.rotulo {
+  font-size: 11px;
+  color: #475569;
+  text-align: center;
+}
+
+.atual {
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.atual small {
+  font-size: 13px;
+  color: #475569;
+}
+
+.setpoint {
+  font-size: 12px;
+  text-align: center;
+  color: #475569;
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: #005596;
+  cursor: pointer;
+}
+
+.consumo {
+  font-size: 12px;
+  text-align: center;
+  color: #475569;
+}
+
+.modos {
+  display: flex;
+  gap: 4px;
+}
+
+.modos button {
+  flex: 1;
+  padding: 6px 0;
+  font-size: 10px;
+  cursor: pointer;
+  background: #ffffff;
+  border: 1px solid #94a3b8;
+  color: #0f172a;
+}
+
+.modos button:hover {
+  background: #e2e8f0;
+}
+
+.modos button.ativo {
+  background: #005596;
+  border-color: #005596;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.botoes {
+  margin-top: 14px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  flex: 1;
+  min-width: 90px;
+  padding: 12px 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background: #ffffff;
+  border: 2px solid #005596;
+  color: #005596;
+}
+
+.btn:hover {
+  background: #005596;
+  color: #ffffff;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn.desativado {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn.e-stop {
+  border-color: #d32f2f;
+  background: #d32f2f;
+  color: #ffffff;
+}
+
+.btn.e-stop:hover {
+  background: #b71c1c;
+  border-color: #b71c1c;
+}
+
+.btn.e-stop.ativo {
+  animation: pisca 0.6s steps(1, end) infinite;
+}
+
+.barra-inferior {
+  background: #ffffff;
+  border-top: 2px solid #005596;
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.barra-inferior .rotulo {
+  text-align: left;
+  font-weight: 700;
+}
+
+.vel {
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  background: #ffffff;
+  border: 2px solid #94a3b8;
+  color: #475569;
+}
+
+.vel.ativo {
+  background: #005596;
+  border-color: #005596;
+  color: #ffffff;
+}

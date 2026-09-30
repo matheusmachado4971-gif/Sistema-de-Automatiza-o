@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>IHM Termocaldeira 4.0</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="barra-superior">
+    <div class="logo">LOGO: <strong>ÁGUIA ENGENHARIA</strong></div>
+
+    <div class="produto">PRODUTO: <strong>TERMOCALDEIRA 4.0</strong></div>
+
+    <div class="status">
+      STATUS:
+      <span class="tag operacao" id="tagOperacao">OPERAÇÃO</span>
+      <span class="tag peak" id="tagPeak">PEAK</span>
+      <span class="tag sensor" id="tagSensor">SENSOR</span>
+      <span class="tag falha" id="tagFalha">FALHA</span>
+    </div>
+
+    <div class="relogio">DATA/HORA: <span id="relogio">--/--/---- --:--:--</span></div>
+  </header>
+
+  <main class="area">
+
+    <aside class="barra-lateral">
+      <h2>BARRALATERAL</h2>
+      <ul>
+        <li>Temp: <span id="latTemp">-- | -- | --</span></li>
+        <li>Tempo: <span id="latTempo">-- | -- | --</span></li>
+        <li>Energia: <span id="latEnergia">-- | -- | --</span></li>
+      </ul>
+    </aside>
+
+    <section class="painel-central">
+      <h2>PAINEL CENTRAL (INSTRUMENTAÇÃO DE CONTROLE)</h2>
+
+      <div class="modulos">
+
+        <div class="modulo" tabindex="0" data-modulo="temperatura">
+          <h3>TEMPERATURA</h3>
+          <p class="rotulo">Atual / Setpoint</p>
+          <p class="atual"><span id="tempAtual">0.0</span> <small>&deg;C</small></p>
+          <input type="range" id="tempSP" min="0" max="300" step="1" value="180">
+          <p class="setpoint">SP: <span id="tempSetpoint">180</span></p>
+          <div class="modos">
+            <button data-modo="SLOW">SLOW</button>
+            <button data-modo="NORM">NORM</button>
+            <button data-modo="FAST">FAST</button>
+            <button data-modo="MAN">MAN</button>
+          </div>
+        </div>
+
+        <div class="modulo" tabindex="0" data-modulo="tempo">
+          <h3>TEMPO</h3>
+          <p class="rotulo">Atual / Setpoint</p>
+          <p class="atual"><span id="tempoAtual">0.0</span> <small>s</small></p>
+          <input type="range" id="tempoSP" min="0" max="600" step="1" value="300">
+          <p class="setpoint">SP: <span id="tempoSetpoint">300</span></p>
+          <div class="modos">
+            <button data-modo="SLOW">SLOW</button>
+            <button data-modo="NORM">NORM</button>
+            <button data-modo="FAST">FAST</button>
+            <button data-modo="MAN">MAN</button>
+          </div>
+        </div>
+
+        <div class="modulo" tabindex="0" data-modulo="energia">
+          <h3>ENERGIA</h3>
+          <p class="rotulo">Atual / Setpoint</p>
+          <p class="atual"><span id="energiaAtual">0.0</span> <small>kW</small></p>
+          <input type="range" id="energiaSP" min="0" max="100" step="1" value="60">
+          <p class="setpoint">SP: <span id="energiaSetpoint">60</span></p>
+          <div class="modos">
+            <button data-modo="SLOW">SLOW</button>
+            <button data-modo="NORM">NORM</button>
+            <button data-modo="FAST">FAST</button>
+            <button data-modo="MAN">MAN</button>
+          </div>
+          <p class="consumo">Consumo: <span id="energiaConsumo">0.00</span> kWh</p>
+        </div>
+
+      </div>
+
+      <div class="botoes" id="botoes">
+        <button id="btnIniciar" class="btn">INICIAR</button>
+        <button id="btnParar" class="btn">PARAR</button>
+        <button id="btnEStop" class="btn e-stop">E-STOP</button>
+        <button id="btnPausar" class="btn">PAUSAR</button>
+        <button id="btnRetomar" class="btn">RETOMAR</button>
+        <button id="btnReset" class="btn">RESET</button>
+        <button id="btnSair" class="btn">SAIR</button>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="barra-inferior">
+    <span class="rotulo">CONTROLE GLOBAL DE VELOCIDADE:</span>
+    <button class="vel" data-vel="0.5">SLOW (50%)</button>
+    <button class="vel ativo" data-vel="1">NORMAL (100%)</button>
+    <button class="vel" data-vel="1.5">FAST (150%)</button>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
